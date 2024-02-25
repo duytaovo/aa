@@ -32,6 +32,7 @@ export class SerializeInterceptor implements NestInterceptor {
     return handler.handle().pipe(
       map((data: any) => {
         return {
+          code: data.code,
           message: data.message,
           result: {
             [Object.keys(data.result)[0]]: plainToInstance(

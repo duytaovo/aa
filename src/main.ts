@@ -22,9 +22,7 @@ async function bootstrap() {
 
   const config = new DocumentBuilder()
     .setTitle('Users API')
-    .setDescription(
-      'A simple API that manipulate some CRUD operations on user stuffs.',
-    )
+    .setDescription('A simple API that manipulate some CRUD operations on auth')
     .setVersion('1.0')
     .addBearerAuth()
     .build();

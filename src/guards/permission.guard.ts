@@ -13,7 +13,7 @@ export class PermissionGuard implements CanActivate {
 
   async canActivate(context: ExecutionContext): Promise<boolean> {
     const { user, body, params } = context.switchToHttp().getRequest();
-    if (body?.roleId === Role.ADMIN || params?.id === Role.ADMIN) return false;
+    if (user?.roleId !== Role.ADMIN) return false;
 
     const permission = this.reflector.get<PermissionType>(
       'permission',

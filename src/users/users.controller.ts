@@ -26,9 +26,9 @@ import { Permission } from '../decorators';
 import { ActionName, EntityName } from '../enums';
 
 @ApiBearerAuth()
-@ApiTags('Users')
+@ApiTags('User')
 @UseGuards(JwtGuard)
-@Controller('users')
+@Controller('user')
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
