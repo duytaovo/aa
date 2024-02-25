@@ -34,6 +34,6 @@ export class RoleIdNotExists implements ValidatorConstraintInterface {
   }
 
   defaultMessage(validationArguments?: ValidationArguments): string {
-    return 'No role found';
+    return 'No role';
   }
 }

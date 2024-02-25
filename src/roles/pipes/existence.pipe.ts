@@ -12,7 +12,7 @@ export class RoleIdNotExistsPipe implements PipeTransform {
 
   async transform(value: any, metadata: ArgumentMetadata) {
     const role = await this.rolesService.findById(value);
-    if (!role) throw new NotFoundException('no role found');
+    if (!role) throw new NotFoundException('No role');
     return value;
   }
 }

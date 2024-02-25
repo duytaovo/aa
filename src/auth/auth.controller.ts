@@ -9,7 +9,7 @@ import {
 import { CreateUserDto } from '../users/dtos';
 import { AuthService } from './auth.service';
 import { ApiTags } from '@nestjs/swagger';
-import { SignInDto } from './dtos';
+import { LoginDto } from './dtos';
 import { CreateAdminDto } from '../users/dtos';
 
 @ApiTags('Auth')
@@ -26,7 +26,7 @@ export class AuthController {
 
   @HttpCode(HttpStatus.OK)
   @Post('/login')
-  async login(@Body() dto: SignInDto) {
+  async login(@Body() dto: LoginDto) {
     const result = await this.authService.login(dto);
     if (!result) throw new BadRequestException('Wrong credentials');
     return {

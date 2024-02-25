@@ -19,7 +19,7 @@ export class ActionIdNotExists implements ValidatorConstraintInterface {
   }
 
   defaultMessage(validationArguments?: ValidationArguments): string {
-    return 'No action found';
+    return 'No action';
   }
 }
 
@@ -35,6 +35,6 @@ export class EntityIdNotExists implements ValidatorConstraintInterface {
   }
 
   defaultMessage(validationArguments?: ValidationArguments): string {
-    return 'No entity found';
+    return 'No entity';
   }
 }

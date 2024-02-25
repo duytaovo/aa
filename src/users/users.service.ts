@@ -37,26 +37,4 @@ export class UsersService {
       where: { roleId: Role.ADMIN },
     });
   }
-
-  findAllUsers(paginationDto: PaginationDto): Promise<User[]> {
-    const { page, pageSize } = paginationDto;
-    return this.prismaService.user.findMany({
-      skip: (page - 1) * pageSize,
-      take: pageSize,
-    });
-  }
-
-  async update(id: number, attrs: Partial<User>): Promise<User> {
-    if ('password' in attrs)
-      attrs.password = await bcrypt.hash(attrs.password, 10);
-    const user = await this.prismaService.user.update({
-      where: { id },
-      data: { ...attrs },
-    });
-    return user;
-  }
-
-  async remove(id: number): Promise<User> {
-    return this.prismaService.user.delete({ where: { id } });
-  }
 }

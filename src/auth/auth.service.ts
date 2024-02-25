@@ -3,7 +3,7 @@ import { CreateUserDto } from '../users/dtos';
 import { JwtService } from '@nestjs/jwt';
 import { ConfigService } from '@nestjs/config';
 import { UsersService } from '../users/users.service';
-import { SignInDto } from './dtos';
+import { LoginDto } from './dtos';
 import { Payload } from '../types';
 import { CreateAdminDto } from '../users/dtos';
 import * as bcrypt from 'bcrypt';
@@ -25,7 +25,7 @@ export class AuthService {
     return { accessToken };
   }
 
-  async login(dto: SignInDto) {
+  async login(dto: LoginDto) {
     const user = await this.usersService.findByEmail(dto.email);
 
     // null meaning no email found or password wrong to controller handle
