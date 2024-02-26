@@ -1,8 +1,7 @@
 import { Injectable } from '@nestjs/common';
-import { CreateUserDto, PaginationDto } from './dtos';
+import { CreateUserDto } from './dtos';
 import { PrismaService } from '../prisma/prisma.service';
 import { CreateAdminDto } from './dtos';
-import { User } from '@prisma/client';
 import { Role } from '../enums';
 import * as bcrypt from 'bcrypt';
 

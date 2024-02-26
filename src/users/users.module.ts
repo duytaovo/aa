@@ -4,9 +4,9 @@ import { UsersService } from './users.service';
 import { CacheModule } from '@nestjs/cache-manager';
 import { UserIdNotExistsPipe } from './pipes';
 import { EmailExists } from './decorators';
-import { PermissionsService } from '../permissions/permissions.service';
 import { RoleIdNotExists } from '../roles/decorators';
 import { RolesService } from '../roles/roles.service';
+import { PermissionsService } from 'src/permissions/permissions.service';
 
 @Module({
   imports: [CacheModule.register()],

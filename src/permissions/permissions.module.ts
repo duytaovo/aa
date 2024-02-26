@@ -1,5 +1,6 @@
 import { Module } from '@nestjs/common';
 import { PermissionsService } from './permissions.service';
+import { PermissionsController } from './permissions.controller';
 import { RoleIdNotExists } from '../roles/decorators';
 import { ActionsService } from './actions.service';
 import { EntitiesService } from './entities.service';
@@ -17,5 +18,6 @@ import { ActionIdNotExists, EntityIdNotExists } from './decorators';
     RoleIdNotExists,
   ],
   exports: [PermissionsService],
+  controllers: [PermissionsController],
 })
 export class PermissionsModule {}

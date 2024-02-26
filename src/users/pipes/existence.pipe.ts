@@ -12,7 +12,7 @@ export class UserIdNotExistsPipe implements PipeTransform {
 
   async transform(value: any, metadata: ArgumentMetadata) {
     const user = await this.usersService.findById(value);
-    if (!user) throw new NotFoundException('no user found');
+    if (!user) throw new NotFoundException('no user ');
     return value;
   }
 }

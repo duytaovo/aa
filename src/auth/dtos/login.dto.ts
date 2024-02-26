@@ -8,6 +8,6 @@ export class LoginDto {
 
   @ApiProperty({ required: true })
   @IsString()
-  @Length(3, 20, { message: 'Password has length from 3 to 20 chars' })
+  @Length(3, 20, { message: 'Password has length from 6 to 20 chars' })
   password: string;
 }
